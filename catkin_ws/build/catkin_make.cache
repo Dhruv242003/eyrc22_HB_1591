@@ -1,0 +1,2 @@
+eYRC-2022_HolA_Bot/task_0_boilerplate/eyrc-2022_holabot:eYRC-2022_HolA_Bot/task_2_boilerplate:pkg_ros_basics:task1
+-DCATKIN_DEVEL_PREFIX=/home/dhruv/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/dhruv/catkin_ws/install -G Unix Makefiles
