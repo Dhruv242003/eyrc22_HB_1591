@@ -35,5 +35,5 @@ Inintially for getting started with the ROS publishers and subscribers we worked
 
 The objective was to move the turlte inside the turtlesim window in a vertical D shape of radius 1 unit.
 
-![Task 0 Output](https://github.com/Dhruv242003/eyrc22_HB_1591/blob/main/HB_1591.png)
+![Task 0 Output](https://github.com/Dhruv242003/Dhruv242003/blob/main/ReadmeImages/Task0.png)
 
