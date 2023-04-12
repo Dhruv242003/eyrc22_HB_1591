@@ -35,5 +35,5 @@ Inintially for getting started with the ROS publishers and subscribers we worked
 
 The objective was to move the turlte inside the turtlesim window in a vertical D shape of radius 1 unit.
 
-<img src="https://github.com/Dhruv242003/Dhruv242003/blob/main/banner2.jpeg" alt="banner" style="width:100%; height:auto%;">
+![Task 0](https://res.cloudinary.com/dymodfcit/image/upload/v1681289853/Task0_nateqi.png)
 
