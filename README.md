@@ -27,13 +27,4 @@ To make a holonomic drive bot which is able to draw images and complex patterns 
    - WiFi Socket
    - Fusion 360
 
-## Project Timeline
-
- **Task 0**
-
-Inintially for getting started with the ROS publishers and subscribers we worked on turtle-sim which is a simple simulator in the Robot Operating System (ROS) that allows users to create and interact with a turtle robot in a 2D space. 
-
-The objective was to move the turlte inside the turtlesim window in a vertical D shape of radius 1 unit.
-
-![Task 0](https://res.cloudinary.com/dymodfcit/image/upload/v1681289853/Task0_nateqi.png)
 
