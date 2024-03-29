@@ -28,6 +28,7 @@ To make a holonomic drive bot which is able to draw images and complex patterns 
    - Fusion 360
 
 
+
 ## Project Timeline
 
  **Task 0**
@@ -54,7 +55,38 @@ Here came the main task and also a lot of confusion. Our Challange was to unders
 
 Odom topic when subscribed gives us the x,y,theta of bot w.r.t global frame as shown in the figure give below. 
 
-<img src="https://blog.hadabot.com/images/hadabot_unicycle_diagram_01.jpg" alt="Odom" width="60%" style="display: block; margin: 0 auto;"/>
+![Odom ](https://blog.hadabot.com/images/hadabot_unicycle_diagram_01.jpg)
+
+
+And to control the bot we were directly giving the Vx, Vy and Vz to the bot using a custom publisher.
+
+**P-Controller**
+
+To make the bot move towards the goals we cannot tell bot the desired goal position. 
+
+A Proportional-Integral-Derivative (PID) controller is a commonly used feedback control mechanism in robotics to regulate the movement of bots to reach a desired position or setpoint. In the context of your question, We focused on the Proportional (P) controller, which is the simplest form of a PID controller.
+
+In a P controller, the control output is directly proportional to the error between the current position and the desired position
+
+*u(t)=Kp⋅e(t)*
+
+u(t): Actuation  
+Kp: Proportional constant  
+e(t): Error
+
+Now, for make the bot move in the desierd and shortest path, we have to give the error w.r.t to the body frame.
+
+![Frame Correction](https://i.pinimg.com/originals/c3/19/de/c319de153b1f60926e526496428c7c5d.png)
+
+So to get the error of the bot w.r.t to the body frame, we used the following formula.
+
+
+![Body Frame Formula ](https://i.pinimg.com/originals/6e/2e/c9/6e2ec94a84e5c91b8f2a05e4551d5304.png )
+
+
+Hence we succesfully Completed the Task1 by making a P-Controller with all the transfomations required and Tuned the Kp value to get the best results.
+
+
 
 
 
