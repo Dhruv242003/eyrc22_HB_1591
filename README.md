@@ -28,7 +28,6 @@ To make a holonomic drive bot which is able to draw images and complex patterns 
    - Fusion 360
 
 
-
 ## Project Timeline
 
  **Task 0**
@@ -86,6 +85,29 @@ So to get the error of the bot w.r.t to the body frame, we used the following fo
 
 Hence we succesfully Completed the Task1 by making a P-Controller with all the transfomations required and Tuned the Kp value to get the best results.
 
+
+
+**Task2**
+
+In task 2, we have again do the same thing i.e. go-to-goal, but thhis time we were not allowed to use the Odom topic and also we were not having any liberty to directly give the Vx, Vy and Vz to the bot.
+
+For feedback, we have to use a overhead camera that will detect the [Aruco](https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html) marker attached on top of the bot. 
+It gives us the current pose of the 4 corners of marker and then we calculated the centroid of marker to get the coordinates of the bot w.r.t to the top right corner of the camera frame. Then we shifted the origin to 250,250 to get the origin at center of frame keeping in mind the inverted nature of y axis of camera frame.
+
+![Body Frame Formula ](https://docs.opencv.org/4.x/singlemarkersdetection.jpg)
+
+For controlling the bot, we have to convert the Vx,Vy,Vz to V1,V2,V3 i.e. individual wheel velocity of the bot. We used the following formula to do so.
+
+
+![Velocity Matrix](https://i.ytimg.com/vi/NcOT9hOsceE/maxresdefault.jpg)
+
+
+There are two files, feedback.py and controller.py.
+feedback.py gets the image from the camera in the gazebo enviornment through a Bridge and the using perspective transfomations and using aruco library we got the coordinates of the bot, and then were published to the /detected_aruco topic
+
+controller.py subscribed the /detected_aruco topic to get the feedback and used the same logic as that of Task1 to go-to-goal, but this time the speeds were converted to the individual wheel velocities and published as a /force topic and were responsible to move the bot.
+
+There were auto-evaluators that judeged the accuracy and speed of the bot to score the teams, and we were qualified for Stage 2 i.e. Hardware stage !!!
 
 
 
